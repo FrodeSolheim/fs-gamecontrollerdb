@@ -280,7 +280,7 @@ def main():
                 f.write("{}:{},".format(key, value))
             f.write("{},\n".format(info["platform"]))
 
-    add_from_file(mappings, errors, "gamecontrollerdb.txt")
+    add_from_file(mappings, errors, "SDL_GameControllerDB/gamecontrollerdb.txt")
     if errors:
         print("")
         print("There were warnings:")
