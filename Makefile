@@ -1,21 +1,24 @@
 all: \
 		Data/GameControllerDB/25-SDL_GameControllerDB.txt \
-		Data/GameControllerDB/50-SDL2.txt
-
-Data:
-	mkdir -p Data
-
-Data/GameControllerDB: Data
-	mkdir -p Data/GameControllerDB
+		Data/GameControllerDB/50-SDL2.txt \
+		Data/GameControllerDB/75-OpenRetro.txt
 
 Data/GameControllerDB/25-SDL_GameControllerDB.txt: \
-		SDL_GameControllerDB.txt \
-		Data/GameControllerDB
-	cp SDL_GameControllerDB.txt $@
+		gamecontrollerdb.txt
+	mkdir -p Data/GameControllerDB
+	cp gamecontrollerdb.txt $@
 	unix2dos $@
 
 Data/GameControllerDB/50-SDL2.txt: \
-		SDL/SDL_gamecontrollerdb.h SDL.py \
-		Data/GameControllerDB
+		SDL/SDL_gamecontrollerdb.h \
+		SDL.py
+	mkdir -p Data/GameControllerDB
 	python3 SDL.py $@
+	unix2dos $@
+
+Data/GameControllerDB/75-OpenRetro.txt: \
+		OpenRetro/*.txt \
+		OpenRetro.py
+	mkdir -p Data/GameControllerDB
+	python3 OpenRetro.py $@
 	unix2dos $@

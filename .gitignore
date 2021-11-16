@@ -2,3 +2,6 @@
 .DS_Store
 *.pyc
 *.swp
+
+/fsemu-sdlgamecontrollerdb.c
+/gamecontrollerdb_split.txt
