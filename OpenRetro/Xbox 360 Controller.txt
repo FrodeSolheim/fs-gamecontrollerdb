@@ -1,11 +1,13 @@
 # Notes: Devices simulating Xbox 360 controllers:
 # 030000005e0400008e02000014010000 8BitDo SN30 Pro (Linux)
 
+# Linux, USB, SDL 2.0.16
+030000005e0400008e02000014010000,Xbox 360 Controller,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Linux,
+#^030000005e0400008e02000014010000,Xbox 360 Controller,axes:6,balls:0,buttons:11,hats:1,
+
 # --- start generic or non-tested
 
 # FIXME: From gamecontrollerdb.txt
-# Linux
-030000005e0400008e02000014010000,X360 Controller,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Linux,
 
 # FIXME: From gamecontrollerdb.txt
 # Windows

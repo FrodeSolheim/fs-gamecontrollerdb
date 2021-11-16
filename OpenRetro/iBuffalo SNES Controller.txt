@@ -1,12 +1,13 @@
 # iBuffalo SNES Controller
 
+BSGP801
+
 Also known as Buffalo Classic USB gamepad
 Model: BSGP810GY Made in Chine, Buffalo Inc.
 
-## linux-usb
-
-03000000830500006020000010010000,USB%2C2-axis 8-button gamepad  ,a:b1,b:b0,back:b6,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b4,rightshoulder:b5,start:b7,x:b3,y:b2,platform:Linux,
-axes:2,balls:0,buttons:8,hats:0,
+# Linux, USB, SDL 2.0.16
+03000000830500006020000010010000,iBuffalo SNES Controller,a:b1,b:b0,back:b6,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b4,rightshoulder:b5,start:b7,x:b3,y:b2,platform:Linux,
+#^03000000830500006020000010010000,USB%2C2-axis 8-button gamepad,axes:2,balls:0,buttons:8,hats:0,
 
 ## macos-usb
 
