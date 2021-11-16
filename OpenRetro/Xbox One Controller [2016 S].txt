@@ -8,7 +8,14 @@
 030000005e040000ea02000001030000,Xbox One Controller,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Linux,
 #^030000005e040000ea02000001030000,Xbox One S Controller,axes:6,balls:0,buttons:11,hats:1,
 
-# Windows, USB, SDL 2.0.16
+# Windows, BT, SDL 2.0.16, Xinput
+030000005e040000e002000000007200,Xbox One S Controller,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b4,leftstick:b8,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a2,righty:a3,start:b7,x:b2,y:b3,platform:Windows,
+#^030000005e040000e002000000007200,Xbox One S Controller,axes:6,balls:0,buttons:16,hats:1,
+
+# FIXME: Guide button not working?
+
+
+# Windows, USB, SDL 2.0.16, Xinput
 030000005e040000ff02000000007200,Xbox One Controller,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b8,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a2,righty:a3,start:b7,x:b2,y:b3,platform:Windows,
 #^030000005e040000ff02000000007200,Controller (Xbox One For Windows),axes:6,balls:0,buttons:16,hats:1,
 
