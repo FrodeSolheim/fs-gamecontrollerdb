@@ -1,7 +1,8 @@
 all: \
 		Data/GameControllerDB/25-SDL_GameControllerDB.txt \
 		Data/GameControllerDB/50-SDL2.txt \
-		Data/GameControllerDB/75-OpenRetro.txt
+		Data/GameControllerDB/75-OpenRetro.txt \
+		gamecontrollerdb.txt
 
 Data/GameControllerDB/25-SDL_GameControllerDB.txt: \
 		SDL_GameControllerDB/gamecontrollerdb.txt
@@ -22,3 +23,9 @@ Data/GameControllerDB/75-OpenRetro.txt: \
 	mkdir -p Data/GameControllerDB
 	python3 OpenRetro.py $@
 	unix2dos $@
+
+gamecontrollerdb.txt: \
+		Data/GameControllerDB/25-SDL_GameControllerDB.txt \
+		Data/GameControllerDB/50-SDL2.txt \
+		Data/GameControllerDB/75-OpenRetro.txt
+	python3 gamecontrollerdb.py
