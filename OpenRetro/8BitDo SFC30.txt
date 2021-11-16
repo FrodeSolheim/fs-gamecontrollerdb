@@ -1,0 +1,69 @@
+# This is the old 8BitDo SFC30 model with updated 4.20 firmware
+# Probably same as 8BitDo SNES30
+# Might also be called SF30...	
+# Maybe only XInput and DInput modes with USB
+
+# linux-bt-dinput
+
+05000000c82d00003028000000010000,8Bitdo SFC30 GamePad,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Linux,
+axes:6,balls:0,buttons:16,hats:1,
+
+# FIXME: linux-bt-macos
+# ??
+
+# linux-bt-switch (no response)
+# Looks like this fakes a Joy-Con (R)
+# 050000007e0500000720000001000000,Pro Controller,platform:Linux,
+
+# linux-bt-xinput
+050000005e040000e002000003090000,8Bitdo SFC30 GamePad(x),a:b0,b:b1,back:b6,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b4,rightshoulder:b5,start:b7,x:b2,y:b3,platform:Linux,
+
+# linux-usb-dinput
+
+03000000c82d000021ab000010010000,SFC30              SFC30 Joystick,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Linux,
+axes:4,balls:0,buttons:12,hats:1,
+
+# linux-usb-macos (maybe not)
+
+# linux-usb-switch (maybe not)
+
+# linux-usb-xinput
+030000005e0400008e02000014010000,Microsoft X-Box 360 pad,a:b0,b:b1,back:b6,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b4,rightshoulder:b5,start:b7,x:b2,y:b3,platform:Linux,
+
+## macos-usb-dinput
+
+03000000c82d000021ab000001000000,SFC30 Joystick,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Mac OS X,
+axes:4,balls:0,buttons:12,hats:1,
+
+# macos-usb-xinput (not recognized)
+
+## macos-bt-dinput
+
+03000000c82d00003028000000010000,8Bitdo SFC30 GamePad,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Mac OS X,
+axes:6,balls:0,buttons:16,hats:1,
+
+# macos-bt-macos
+030000004c050000c405000000016800,PS4 Controller,a:b0,b:b1,back:b4,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b9,rightshoulder:b10,start:b6,x:b2,y:b3,platform:Mac OS X,
+
+# FIXME: macos-bt-switch not appearing?
+
+# macos-bt-xinput
+030000005e040000e002000003090000,8Bitdo SFC30 GamePad(x),a:b0,b:b1,back:b6,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b4,rightshoulder:b5,start:b7,x:b2,y:b3,platform:Mac OS X,
+
+# windows-bt-dinput
+
+03000000c82d00003028000000000000,Bluetooth Wireless Controller   ,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Windows,
+axes:6,balls:0,buttons:16,hats:1,
+
+# windows-bt-macos 
+
+# windows-bt-switch
+
+# windows-bt-xinput
+
+# windows-bt-xinput-0
+
+# windows-usb 
+
+03000000c82d000021ab000000000000,SFC30 Joystick,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Windows,
+axes:4,balls:0,buttons:12,hats:1,

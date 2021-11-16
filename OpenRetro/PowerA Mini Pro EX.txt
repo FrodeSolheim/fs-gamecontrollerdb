@@ -1,0 +1,14 @@
+# FIXME: It is possible that there is a non-mini version if this controller
+# with the same ID/name...
+
+# linux-usb-xinput
+03000000c62400001a53000000010000,PowerA Pro Ex,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Linux,
+axes:6,balls:0,buttons:11,hats:1,
+
+# macos-usb-xinput (not detected)
+
+# windows-usb-xinput
+03000000c62400001a53000000007801,XInput Controller #1,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b8,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Windows,
+
+# windows-usb-xinput-0
+03000000c62400001a53000000000000,Controller (Pro Ex mini for XBOX),a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b4,leftstick:b8,lefttrigger:+a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:-a2,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Windows,

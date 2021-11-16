@@ -1,0 +1,28 @@
+# Retronic Joystick Adapter
+
+It is somewhat impossible to create a perfect mapping for this adapter since
+you can load it with different firmware depending on what controllers you
+want to use. The mappings in this file assumes that the
+"Atari/Commodore 64/Amiga/Sega Master System joystick" firmware is used.
+
+Note: One problem is that the adapter starts with x and y axes negative! Maybe
+fixed with newer firmware versions.
+
+FIXME: TODO: Try latest firmware.
+FIXME: TODO: Test with, and add support for second and third button.
+FIXME: TODO: Check if this device is using the "re-usable VID/PID pair"...
+
+## linux-usb
+
+0300000081170000990a000001010000,retronicdesign.com Retro Joystick Adapter v2.0,a:b0,leftx:a0,lefty:a1,platform:Linux,
+axes:2,balls:0,buttons:3,hats:0,
+
+## macos-usb
+
+0300000081170000990a000000020000,Retro Joystick Adapter v2.0,a:b0,leftx:a0,lefty:a1,platform:Mac OS X,
+axes:2,balls:0,buttons:3,hats:0,
+
+## windows-usb
+
+0300000081170000990a000000000000,Retro Joystick Adapter v2.0,a:b0,leftx:a0,lefty:a1,platform:Windows,
+axes:2,balls:0,buttons:3,hats:0,

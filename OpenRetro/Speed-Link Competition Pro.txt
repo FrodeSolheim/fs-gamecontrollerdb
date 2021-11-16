@@ -1,0 +1,17 @@
+# Speed-link Competition Pro
+# Competition Pro SL-5502-TBE
+
+## linux-usb
+
+030000000b0400003365000000010000,MOSIC      SPEED-LINK Competition Pro ,a:b0,back:b2,leftx:a0,lefty:a1,start:b3,x:b1,platform:Linux,
+axes:2,balls:0,buttons:4,hats:0,
+
+## macos-usb
+
+030000000b0400003365000000010000,SPEED-LINK Competition Pro ,a:b0,back:b2,leftx:a0,lefty:a1,start:b3,x:b1,platform:Mac OS X,
+axes:2,balls:0,buttons:4,hats:0,
+
+## windows-usb
+
+030000000b0400003365000000000000,SPEED-LINK Competition Pro ,a:b0,back:b2,leftx:a0,lefty:a1,start:b3,x:b1,platform:Windows,
+axes:2,balls:0,buttons:4,hats:0,

@@ -1,0 +1,182 @@
+# 8BitDo N30 Pro 2
+
+Labelled "8BitDo N30 pro" on the front and "8BitDo N30 Pro 2" on the back.
+
+This one is a bit tricky. There are a couple of axes which are triggered by
+both the left/right d-pad as well as the left/right triggers. The d-pad and
+right triggers also triggers hats / buttons, so the solution here is to ignore
+the conflicting axes. This is on Linux and macOS.
+
+On Windows, leftx is a0, lefty is both a1 and a2 (same values on both axes),
+rightx is a3 and righty is both a4 and a5 (same values on both axes). So on all
+platforms, the behavior is strange. Maybe better to wait with sending configs
+to SDL_GameControllerDB. Maybe a firmware update fixes this...
+
+## linux-bt-dinput
+
+05000000c82d00006528000000010000,8BitDo N30 Pro 2,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Linux,
+axes:6,balls:0,buttons:16,hats:1,
+
+## linux-bt-macos FIXME
+
+# [58825.136068] sony 0005:054C:05C4.0016: unknown main item tag 0x0
+# [58825.173076] sony 0005:054C:05C4.0016: Failed to get calibration data from Dualshock 4
+# [58825.173381] sony 0005:054C:05C4.0016: hidraw3: BLUETOOTH HID v81.00 Gamepad [Wireless Controller] on 5c:f3:70:68:d3:fe
+# [58825.173386] sony 0005:054C:05C4.0016: failed to claim input
+
+## linux-bt-switch
+
+050000007e0500000920000001000000,Pro Controller,a:b0,b:b1,back:b8,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b12,leftshoulder:b4,leftstick:b10,lefttrigger:b6,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b11,righttrigger:b7,rightx:a2,righty:a3,start:b9,x:b2,y:b3,platform:Linux,
+
+## linux-bt-xinput
+
+050000005e040000e002000003090000,8BitDo N30 Pro 2,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b8,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Linux,
+
+## linux-usb-dinput
+
+03000000c82d00001590000011010000,8Bitdo  8BitDo N30 Pro 2,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Linux,
+axes:6,balls:0,buttons:15,hats:1,
+
+## linux-usb-macos
+030000004c050000c405000011810000,Sony Computer Entertainment Wireless Controller,a:b0,b:b1,back:b8,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b11,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b12,righttrigger:a5,rightx:a3,righty:a4,start:b9,x:b3,y:b2,platform:Linux
+
+## linux-usb-switch
+
+Not responding.
+
+## linux-usb-xinput
+
+030000005e0400008e02000014010000,Microsoft X-Box 360 pad,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Linux,
+
+## macos-bt-dinput
+
+03000000c82d00006528000000010000,8BitDo N30 Pro 2,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Mac OS X,
+axes:6,balls:0,buttons:16,hats:1,
+
+## macos-bt-macos
+
+030000004c050000c405000000016800,PS4 Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Mac OS X,
+
+## macos-bt-switch
+
+FIXME: Incompatible?
+# 030000007e0500000920000001006800,Nintendo Switch Pro Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:+a4,leftstick:b7,lefttrigger:b9,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:+a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Mac OS X,
+
+## macos-bt-xinput
+
+030000005e040000e002000003090000,8BitDo N30 Pro 2,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b8,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Mac OS X,
+
+## macos-usb-dinput
+
+03000000c82d00001590000001000000,8BitDo N30 Pro 2,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Mac OS X,
+axes:6,balls:0,buttons:15,hats:1,
+
+## macos-usb-macos
+
+030000004c050000c405000000016800,PS4 Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Mac OS X,
+
+## macos-usb-switch (not responding)
+
+## macos-usb-xinput (not recognized)
+
+## windows-bt-dinput
+
+03000000c82d00006528000000000000,Bluetooth Wireless Controller   ,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a3,righty:a4,start:b11,x:b4,y:b3,platform:Windows,
+axes:6,balls:0,buttons:16,hats:1,
+
+## windows-usb-dinput
+
+03000000c82d00001590000000000000,8BitDo N30 Pro 2,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a3,righty:a4,start:b11,x:b4,y:b3,platform:Windows,
+axes:6,balls:0,buttons:15,hats:1,
+
+## HID data
+
+### HID report
+
+HID report while at rest state:
+
+    00 00 0F 80 7F 80 7F 00 00
+
+XX XX buttons - 15 bit + 1 padding bit
+XX hat - 4 bits - degrees (0..7, "Null State" -> 0xF center) + 4 bit padding
+XX XX XX XX axes X, Y, Z, Rz
+XX XX simulation control "axes" (0-255) C4 (accelerator) and C5 (brake)
+
+"When a hat switch is not being pressed it is in a null state. When in a null
+state, the control will report a value outside of the specified LogicalMinimum
+and Logical Maximum (the most negative value, such as -128 for an 8-bit value)"
+
+### HID dump
+
+usbhid-dump -m 2dc8:9015 -i0 | grep -v :
+
+ 05 01 09 05 A1 01 15 00 25 01 35 00 45 01 75 01
+ 95 0F 05 09 19 01 29 0F 81 02 95 01 81 01 05 01
+ 25 07 46 3B 01 75 04 95 01 65 14 09 39 81 42 65
+ 00 95 01 81 01 26 FF 00 46 FF 00 09 30 09 31 09
+ 32 09 35 75 08 95 04 81 02 05 02 15 00 26 FF 00
+ 09 C4 09 C5 95 02 75 08 81 02 05 08 09 43 15 00
+ 26 FF 00 35 00 46 FF 00 75 08 95 02 91 82 09 44
+ 91 82 09 45 91 82 09 46 91 82 C0
+
+usbhid-dump -m 2dc8:9015 -i0 | grep -v : | xxd -r -p | hidrd-convert -o spec
+
+Usage Page (Desktop),               ; Generic desktop controls (01h)
+Usage (Gamepad),                    ; Gamepad (05h, application collection)
+Collection (Application),
+    Logical Minimum (0),
+    Logical Maximum (1),
+    Physical Minimum (0),
+    Physical Maximum (1),
+    Report Size (1),
+    Report Count (15),
+    Usage Page (Button),            ; Button (09h)
+    Usage Minimum (01h),
+    Usage Maximum (0Fh),
+    Input (Variable),
+    Report Count (1),
+    Input (Constant),
+    Usage Page (Desktop),           ; Generic desktop controls (01h)
+    Logical Maximum (7),
+    Physical Maximum (315),
+    Report Size (4),
+    Report Count (1),
+    Unit (Degrees),
+    Usage (Hat Switch),             ; Hat switch (39h, dynamic value)
+    Input (Variable, Null State),
+    Unit,
+    Report Count (1),
+    Input (Constant),
+    Logical Maximum (255),
+    Physical Maximum (255),
+    Usage (X),                      ; X (30h, dynamic value)
+    Usage (Y),                      ; Y (31h, dynamic value)
+    Usage (Z),                      ; Z (32h, dynamic value)
+    Usage (Rz),                     ; Rz (35h, dynamic value)
+    Report Size (8),
+    Report Count (4),
+    Input (Variable),
+    Usage Page (Simulation),        ; Simulation controls (02h)
+    Logical Minimum (0),
+    Logical Maximum (255),
+    Usage (C4h),
+    Usage (C5h),
+    Report Count (2),
+    Report Size (8),
+    Input (Variable),
+    Usage Page (LED),               ; LEDs (08h)
+    Usage (43h),
+    Logical Minimum (0),
+    Logical Maximum (255),
+    Physical Minimum (0),
+    Physical Maximum (255),
+    Report Size (8),
+    Report Count (2),
+    Output (Variable, Volatile),
+    Usage (44h),
+    Output (Variable, Volatile),
+    Usage (45h),
+    Output (Variable, Volatile),
+    Usage (46h),
+    Output (Variable, Volatile),
+End Collection

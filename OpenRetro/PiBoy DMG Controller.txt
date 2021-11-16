@@ -1,0 +1,2 @@
+# Contributed by HoraceAndTheSpider
+15000000010000000100000000010000,PiBoy DMG Controller,a:b1,b:b0,x:b2,y:b4,back:b8,start:b9,leftstick:b10,leftshoulder:b5,rightshoulder:b3,dpup:b12,dpdown:b11,dpleft:b13,dpright:b14,leftx:a0,lefty:a1,lefttrigger:b7,righttrigger:b6,platform:Linux,

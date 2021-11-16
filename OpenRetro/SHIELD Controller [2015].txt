@@ -1,0 +1,15 @@
+# This 2015 model uses WiFi Direct technology, so it does not support
+# bluetooth connections. The 2017 update should use Bluetooth.
+# Firmware: v1.96/99/3.71/0.32
+
+# linux-usb
+03000000550900001072000011010000,NVIDIA Controller v01.03,a:b0,b:b1,back:b14,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b15,leftshoulder:b4,leftstick:b8,lefttrigger:a5,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a4,rightx:a2,righty:a3,start:b7,x:b2,y:b3,platform:Linux,
+
+# macos-usb (buttons are not responding, only some axes work)
+# 03000000550900001072000000016800,NVIDIA Controller v01.03,platform:Mac OS X,
+
+# windows-usb-xinput
+030000005509000000b4000000007801,XInput Controller #1,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:-a2,leftstick:b8,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Windows,
+
+# windows-usb-xinput-0
+030000005509000000b4000000000000,Controller (XBOX 360 For Windows),a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b4,leftstick:b8,lefttrigger:+a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:-a2,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Windows,

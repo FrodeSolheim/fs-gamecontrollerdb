@@ -1,0 +1,84 @@
+# linux-bt-dinput
+
+05000000c82d00006228000000010000,8BitDo SN30 gamepad,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Linux,
+axes:6,balls:0,buttons:16,hats:1,
+
+# FIXME: linux bt-macos (kernel bug)
+# Fails on Fedora 31 Kernel 5.4
+# Fails on Ubuntu 19.10 Kernel 5.3
+# [176520.363577] sony 0003:054C:05C4.0011: Failed to get calibration data from Dualshock 4
+# [176520.363640] sony 0003:054C:05C4.0011: hidraw1: USB HID v81.11 Gamepad [HID 054c:05c4] on usb-0000:00:14.0-9/input0
+# [176520.363641] sony 0003:054C:05C4.0011: failed to claim input
+# https://bugzilla.kernel.org/show_bug.cgi?id=204877
+
+# linux-bt-switch
+050000007e0500000920000001000000,Pro Controller,a:b0,b:b1,back:b8,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b4,rightshoulder:b5,start:b9,x:b2,y:b3,platform:Linux,
+
+# linux-bt-xinput
+050000005e040000e002000003090000,8BitDo SN30 gamepad,a:b0,b:b1,back:b6,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b4,rightshoulder:b5,start:b7,x:b2,y:b3,platform:Linux,
+
+# linux-usb-dinput
+
+03000000c82d00001290000011010000,8Bitdo  8BitDo SN30 gamepad,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Linux,
+axes:6,balls:0,buttons:15,hats:1,
+
+# linux-usb-macos
+030000004c050000c405000011810000,Sony Computer Entertainment Wireless Controller,a:b0,b:b1,back:b8,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b4,rightshoulder:b5,start:b9,x:b3,y:b2,platform:Linux,
+
+# FIXME: linux-usb-switch (buttons not responding)
+# 030000007e0500000920000011010000,Nintendo Co., Ltd. Pro Controller,platform:Linux,
+
+# linux-usb-xinput
+030000005e0400008e02000014010000,Microsoft X-Box 360 pad,a:b0,b:b1,back:b6,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b4,rightshoulder:b5,start:b7,x:b2,y:b3,platform:Linux,
+
+# macos-bt-dinput
+
+03000000c82d00006228000000010000,8BitDo SN30 gamepad,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Mac OS X,
+axes:6,balls:0,buttons:16,hats:1,
+
+# macos-bt-macos
+030000004c050000c405000000016800,PS4 Controller,a:b0,b:b1,back:b4,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b9,rightshoulder:b10,start:b6,x:b2,y:b3,platform:Mac OS X,
+
+# macos-bt-switch
+030000007e0500000920000001006800,Nintendo Switch Pro Controller,a:b0,b:b1,back:b4,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b9,rightshoulder:b10,start:b6,x:b2,y:b3,platform:Mac OS X,
+
+# macos-bt-xinput
+030000005e040000e002000003090000,8BitDo SN30 gamepad,a:b0,b:b1,back:b6,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b4,rightshoulder:b5,start:b7,x:b2,y:b3,platform:Mac OS X,
+
+# macos-usb-dinput
+
+03000000c82d00001290000001000000,8BitDo SN30 gamepad,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Mac OS X,
+axes:6,balls:0,buttons:15,hats:1,
+
+# macos-usb-macos
+030000004c050000c405000000016800,PS4 Controller,a:b0,b:b1,back:b4,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b9,rightshoulder:b10,start:b6,x:b2,y:b3,platform:Mac OS X,
+
+# macos-usb-switch (not responding)
+
+# macos-usb-xinput (not detected)
+
+# windows-bt-dinput
+
+03000000c82d00006228000000000000,Bluetooth Wireless Controller   ,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Windows,
+axes:6,balls:0,buttons:16,hats:1,
+
+# windows-bt-macos 
+
+# windows-bt-switch
+
+# windows-bt-xinput
+
+# windows-bt-xinput-0
+
+## windows-usb-dinput
+
+03000000c82d00001290000000000000,8BitDo SN30 gamepad,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Windows,
+axes:6,balls:0,buttons:15,hats:1,
+
+# windows-usb-macos
+
+# windows-usb-switch
+
+# windows-usb-xinput
+
+# windows-usb-xinput-0

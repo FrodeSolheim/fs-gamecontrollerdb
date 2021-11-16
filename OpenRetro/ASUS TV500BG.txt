@@ -1,0 +1,45 @@
+# ASUS TV500BG
+
+No working guide/menu button.
+
+## Pairing
+
+Press and hold <- and o for a few seconds to initiate pairing. In pairing mode,
+all 4 lights blink at the same time.
+
+## Linux (Bluetooth)
+
+Note: Sometimes fails to connect on Linux with error:
+
+    kobject_add_internal failed for hci0:12 with -EEXIST, don't try to register
+    things with the same name in the same directory.
+    [25246.679939] Bluetooth: hci0: failed to register connection device
+
+(Just try turning the controller off and on again)
+
+05000000050b00000045000040000000,ASUS Gamepad,a:b0,b:b1,back:b9,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b4,leftstick:b7,lefttrigger:a5,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b8,righttrigger:a4,rightx:a2,righty:a3,start:b10,x:b2,y:b3,platform:Linux,
+axes:7,balls:0,buttons:11,hats:1,
+
+## macOS (Bluetooth)
+
+03000000050b00000045000040000000,ASUS Gamepad,a:b0,b:b1,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b4,leftstick:b7,lefttrigger:a5,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b8,righttrigger:a4,rightx:a2,righty:a3,start:b9,x:b2,y:b3,platform:Mac OS X,
+axes:6,balls:0,buttons:11,hats:1,
+
+## Windows (Bluetooth)
+
+On windows, the controller does not work by default. Two devices called
+`Gamepad` appears, but none of them are working. ASUS has a Windows drivers
+for the ASUS TV500BG Gamepad which you can install, and this causes a working
+Xinput Controller device to appear in addition (except for missing the guide
+button).
+
+030000005e0400008e02000000007801,XInput Controller #1,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b4,leftstick:b8,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Windows,
+axes:6,balls:0,buttons:11,hats:1,
+
+### Blacklist
+
+~03000000050b00000045000000000000,Gamepad,platform:Windows,~
+̃~axes:2,balls:0,buttons:11,hats:1,~
+~03000000050b00000045000000000000,Gamepad,platform:Windows,~
+~axes:0,balls:0,buttons:0,hats:0,~
+

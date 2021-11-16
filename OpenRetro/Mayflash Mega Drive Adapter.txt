@@ -1,0 +1,44 @@
+# Mayflash Mega Drive Adapter.txt
+
+FIXME: TODO: Support for Mega Drive controllers / more buttons
+Only tested with 1-button Amiga joystick right now.
+FIXME: test with two-button Amiga joystick
+
+In XInput mode, only one host device appears and only controller can be
+attached in either port.
+
+## linux-usb-dinput
+
+It appears as two devices, but a joystick in any port triggers the same outputs
+in both devices. FIXME: Not with Sega Mega Drive controller, re-check with
+Amiga joystick!
+
+With Amiga joystick:
+
+# 0300000079000000ae18000011010000,Mayflash limited Mayflash MD USB Adapter,+leftx:h0.2,+lefty:h0.4,-leftx:h0.8,-lefty:h0.1,a:b0,platform:Linux,
+# axes:4,balls:0,buttons:16,hats:1,
+
+With Retro-Bit Sega Mega Drive controller:
+
+0300000079000000ae18000011010000,Mayflash limited Mayflash MD USB Adapter,a:b0,b:b1,back:b7,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b6,rightshoulder:b2,start:b9,x:b3,y:b4,platform:Linux,
+axes:4,balls:0,buttons:16,hats:1,
+
+## linux-usb-xinput
+
+0300000079000000af18000001010000,Generic X-Box pad,+leftx:h0.2,+lefty:h0.4,-leftx:h0.8,-lefty:h0.1,a:b0,platform:Linux,
+axes:6,balls:0,buttons:11,hats:1,
+
+## macos-usb
+
+0300000079000000ae18000000010000,Mayflash MD USB Adapter,+leftx:h0.2,+lefty:h0.4,-leftx:h0.8,-lefty:h0.1,a:b0,platform:Mac OS X,
+axes:4,balls:0,buttons:16,hats:1,
+
+## windows-usb
+
+0300000079000000ae18000000000000,Mayflash MD USB Adapter,+leftx:h0.2,+lefty:h0.4,-leftx:h0.8,-lefty:h0.1,a:b0,platform:Windows,
+axes:4,balls:0,buttons:16,hats:1,
+
+## windows-usb-xinput
+
+0300000079000000af18000000007801,XInput Controller #1,+leftx:h0.2,+lefty:h0.4,-leftx:h0.8,-lefty:h0.1,a:b0,platform:Windows,
+axes:6,balls:0,buttons:11,hats:1,

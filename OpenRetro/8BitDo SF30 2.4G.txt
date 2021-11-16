@@ -1,0 +1,18 @@
+# 8Bitdo 8Bitdo SF30 2.4G Wireless Controller
+# 2.4 GHz controller for NES/SNES Mini via dongle
+# No bluetooth, can only connect to PCs using USB
+
+## linux-usb
+
+03000000c82d00000130000011010000,8Bitdo 8Bitdo SF30 Wireless Controller,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Linux,
+axes:6,balls:0,buttons:12,hats:1,
+
+## macos-usb
+
+03000000c82d00000130000001000000,8Bitdo SF30 Wireless Controller,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Mac OS X,
+axes:6,balls:0,buttons:12,hats:1,
+
+## windows-usb
+
+03000000c82d00000130000000000000,8Bitdo SF30 Wireless Controller,a:b1,b:b0,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b6,rightshoulder:b7,start:b11,x:b4,y:b3,platform:Windows,
+axes:6,balls:0,buttons:12,hats:1,

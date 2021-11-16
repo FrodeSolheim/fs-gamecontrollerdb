@@ -1,0 +1,13 @@
+# Retro-Bit GameCube Controller
+
+Warning: This controller does not seem to use a unique VID/PID pair.
+
+0079:0006 DragonRise Inc. PC TWIN SHOCK Gamepad
+
+# Also known as (gamecontroller db):
+# 03000000790000000600000010010000,DragonRise Inc. Generic USB Joystick
+
+## linux-usb
+
+03000000790000000600000010010000,Generic   USB  Joystick  ,a:b2,b:b3,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,lefttrigger:b4,leftx:a0,lefty:a1,rightshoulder:b6,righttrigger:b5,rightx:a3,righty:a4,start:b9,x:b0,y:b1,platform:Linux,
+axes:5,balls:0,buttons:12,hats:1,

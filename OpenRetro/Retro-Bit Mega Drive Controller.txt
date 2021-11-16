@@ -1,0 +1,12 @@
+# Retro-Bit Mega Drive Controller
+
+0079:0011 DragonRise Inc. Gamepad
+
+Note, this device is mapped with Z -> LB, C - RB.
+
+Note: See Retro-Bit Mega Drive - Saturn Controller.txt
+
+## linux-usb
+
+# 03000000790000001100000011010000,SWITCH CO.%2CLTD. USB Gamepad ,a:b1,b:b2,back:b8,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b5,rightshoulder:b4,start:b9,x:b0,y:b3,platform:Linux,
+# axes:2,balls:0,buttons:10,hats:0,

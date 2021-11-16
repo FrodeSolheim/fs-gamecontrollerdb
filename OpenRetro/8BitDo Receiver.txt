@@ -1,0 +1,29 @@
+# 8BitDo Receiver
+# 8BitDo Wireless Adapter
+# 8BitDo Wireless USB Adapter
+# Toggle receiver modes with:
+# - XInput: Press and hold SELECT+UP for 3 seconds
+# - DInput: Press and hold SELECT+LEFT for 3 seconds
+# - macOS: Press and hold SELECT+RIGHT for 3 seconds
+# - Switch: Automatic
+
+# linux-usb-dinput
+03000000c82d00000031000011010000,8BitDo 8BitDo Receiver,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Linux,
+
+# linux-usb-macos FIXME: HANGS computer (Ubuntu 19.10)
+# WARNING: macOS mode crashes Ubuntu 19.10? (makes machine lock up hard)
+
+# linux-usb-switch (no way to enable?)
+
+# linux-usb-xinput
+030000005e0400008e02000020010000,Microsoft X-Box 360 pad,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Linux,
+
+# macos-usb-dinput
+03000000c82d00000031000001000000,8BitDo Receiver,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Mac OS X,
+
+# macos-usb-macos
+030000004c050000c405000000016800,PS4 Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Mac OS X,
+
+# macos-usb-switch (no way to enable?)
+
+# macos-usb-xinput (not detected)

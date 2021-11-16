@@ -1,0 +1,27 @@
+# In order to connect on Linux:
+# echo 1 | sudo tee /sys/module/bluetooth/parameters/disable_ertm
+
+## linux-bt
+050000005e040000e002000003090000,Xbox Wireless Controller,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b8,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Linux,
+
+## linux-usb-xinput
+
+030000005e040000ea02000001030000,Microsoft X-Box One S pad,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Linux,
+
+# macos-bt
+030000005e040000fd02000003096800,Unknown Xbox Wireless Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Mac OS X,
+
+# macos-usb (not detected)
+
+# windows-bt-xinput
+030000005e040000e002000000007801,XInput Controller #1,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b8,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Windows,
+
+# windows-bt-xinput-0 (not responding)
+# 030000005e040000e002000000000000,Bluetooth XINPUT compatible input device,platform:Windows,
+
+## windows-usb-xinput
+
+030000005e040000ff02000000007801,XInput Controller #1,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b8,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Windows,
+
+# windows-usb-xinput-0 (not responding)
+# 030000005e040000ff02000000000000,Controller (Xbox One For Windows),platform:Windows,

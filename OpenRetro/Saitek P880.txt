@@ -1,0 +1,12 @@
+# Using the "shift" button as start
+# Using the SEGA mapping recommended at SDL_GameControllerDB for the
+# 6-button layout (etc)
+
+# linux-usb
+03000000a30600000901000000010000,SAITEK P880,a:b2,b:b3,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b6,leftstick:b8,lefttrigger:b7,leftx:a0,lefty:a1,rightshoulder:b4,rightstick:b9,righttrigger:b5,rightx:a3,righty:a2,start:b10,x:b0,y:b1,platform:Linux,
+
+# macos-usb
+03000000a30600000901000001000000,P880,a:b2,b:b3,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b6,leftstick:b8,lefttrigger:b7,leftx:a0,lefty:a1,rightshoulder:b4,rightstick:b9,righttrigger:b5,rightx:a3,righty:a2,start:b10,x:b0,y:b1,platform:Mac OS X,
+
+# windows-usb
+03000000a30600000901000000000000,P880,a:b2,b:b3,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b6,leftstick:b8,lefttrigger:b7,leftx:a0,lefty:a1,rightshoulder:b4,rightstick:b9,righttrigger:b5,rightx:a3,righty:a2,start:b10,x:b0,y:b1,platform:Windows,

@@ -1,0 +1,7 @@
+
+
+## linux-usb
+# Kjell.com SNES PC Controller
+# Also known as 030000001008000001e5000010010000,NEXT SNES Controller according to gamecontrollerdb
+030000001008000001e5000010010000,usb gamepad           ,a:b2,b:b1,back:b8,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b4,rightshoulder:b6,start:b9,x:b3,y:b0,platform:Linux,
+axes:2,balls:0,buttons:10,hats:0,

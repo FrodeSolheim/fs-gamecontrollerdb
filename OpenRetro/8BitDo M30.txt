@@ -1,0 +1,25 @@
+# macOS issues:
+# - Axes 4 and 5 are swapped in usb vs bluetooth. Same GUID.
+# - When using dpad - dpad mode, right/left have conflict with l/r shoulders.
+# - macos-bt-dinput guid was first same as macos-usb-dinput, then it changed ?? maybe my fault?
+# - on old (?) firmware, menu button does not work with usb cable / dinput mode
+
+# linux-bt-dinput
+
+# macos-bt-dinput
+03000000c82d00005106000000010000,8BitDo M30 gamepad,a:b0,b:b1,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,guide:b2,leftshoulder:+a5,lefttrigger:+a4,rightshoulder:b6,righttrigger:b7,start:b11,x:b3,y:b4,platform:Mac OS X,
+
+# macos-bt-macos
+
+# macos-bt-switch
+
+# macos-bt-xinput
+
+# macos-usb-dinput
+03000000c82d00000650000001000000,8BitDo M30 gamepad,a:b0,b:b1,back:b10,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,guide:b2,leftshoulder:+a4,lefttrigger:+a5,rightshoulder:b6,righttrigger:b7,start:b11,x:b3,y:b4,platform:Mac OS X,
+
+# macos-usb-macos
+
+# macos-usb-switch
+
+# macos-usb-xinput

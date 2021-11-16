@@ -1,0 +1,33 @@
+# FIXME: Marketing name?
+
+# Linux
+
+On Linux, only one controller can be inserted into the adapter at a time.
+Linux only sees two axes and one button.  The controller can be used with
+either port in the cable.
+
+03000000921200005441000000010000,INNEX ATARI Controller USB,a:b0,leftx:a0,lefty:a1,platform:Linux,
+axes:2,balls:0,buttons:1,hats:0,
+
+There are some projects to fix support for this adapter:
+
+* https://github.com/robmcmullen/hid-atari-retrobit
+* https://github.com/msteinbeck/hid-retrobit
+
+Maybe the Linux HID module should get a patch with HID_QUIRK_MULTI_INPUT.
+
+# macos
+
+On macOS, there are four axes and two buttons, but the ports are merged into
+one device, so only port 1 of the cable is mapped.
+
+03000000921200005441000000020000,ATARI Controller USB,a:b0,dpdown:+a2,dpleft:-a0,dpright:+a0,dpup:-a2,platform:Mac OS X,
+axes:4,balls:0,buttons:2,hats:0,
+
+# Windows
+
+Works out of the box with two controllers connected (the adapter appears as two
+joystick devices).
+
+03000000921200005441000000000000,ATARI Controller USB,a:b0,leftx:a0,lefty:a1,platform:Windows,
+axes:2,balls:0,buttons:1,hats:0,

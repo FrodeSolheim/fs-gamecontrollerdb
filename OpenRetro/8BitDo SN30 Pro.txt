@@ -1,0 +1,282 @@
+# Notes
+# - 8bitdo menu button does nothing in usb-dinput mode (for some systems?) :-/
+# - menu button works in xinput usb mode though (and also bt-dinput mode)
+
+# linux-bt-dinput
+
+05000000c82d00000161000000010000,8Bitdo SN30 Pro,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Linux,
+axes:4,balls:0,buttons:16,hats:1,
+
+# linux-bt-macos FIXME
+# [176520.363577] sony 0003:054C:05C4.0011: Failed to get calibration data from Dualshock 4
+# [176520.363640] sony 0003:054C:05C4.0011: hidraw1: USB HID v81.11 Gamepad [HID 054c:05c4] on usb-0000:00:14.0-9/input0
+# [176520.363641] sony 0003:054C:05C4.0011: failed to claim input
+# https://bugzilla.kernel.org/show_bug.cgi?id=204877
+
+# linux-bt-switch
+050000007e0500000920000001000000,Pro Controller,a:b0,b:b1,back:b8,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b12,leftshoulder:b4,leftstick:b10,lefttrigger:b6,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b11,righttrigger:b7,rightx:a2,righty:a3,start:b9,x:b2,y:b3,platform:Linux,
+
+# linux-bt-xinput
+050000005e040000e002000003090000,8Bitdo SN30 Pro,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b8,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Linux,
+
+## linux-usb-dinput
+
+03000000c82d00000160000011010000,8Bitdo SF30 Pro   8Bitdo SN30 Pro,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Linux,
+axes:4,balls:0,buttons:15,hats:1,
+
+# linux-usb-macos
+030000004c050000c405000011810000,Sony Computer Entertainment Wireless Controller,a:b0,b:b1,back:b8,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b11,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b12,righttrigger:a5,rightx:a3,righty:a4,start:b9,x:b3,y:b2,platform:Linux
+
+## linux-usb-switch
+
+Not responding.
+
+## linux-usb-xinput
+
+030000005e0400008e02000014010000,Microsoft X-Box 360 pad,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Linux,
+axes:6,balls:0,buttons:11,hats:1,
+
+# macos-bt-dinput
+
+03000000c82d00000161000000010000,8Bitdo SN30 Pro,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Mac OS X,
+axes:4,balls:0,buttons:16,hats:1,
+
+# macos-bt-macos
+030000004c050000c405000000016800,PS4 Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Mac OS X,
+
+# macos-bt-switch
+030000007e0500000920000001006800,Nintendo Switch Pro Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Mac OS X,
+
+# macos-bt-xinput
+030000005e040000e002000003090000,8Bitdo SN30 Pro,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b8,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Mac OS X,
+
+# macos-usb-dinput
+
+03000000c82d00000160000001000000,8Bitdo SN30 Pro,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Mac OS X,
+axes:4,balls:0,buttons:15,hats:1,
+
+# macos-usb-macos
+030000004c050000c405000000016800,PS4 Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Mac OS X,
+
+## macos-usb-switch
+
+Not responding.
+
+## macos-usb-xinput
+
+Not detected.
+
+## windows-bt-dinput
+
+03000000c82d00000161000000000000,Bluetooth Wireless Controller   ,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Windows,
+axes:4,balls:0,buttons:16,hats:1,
+
+## windows-bt-macos 
+
+030000004c050000c405000000006800,PS4 Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Windows,
+axes:6,balls:0,buttons:16,hats:0,
+
+## windows-bt-switch
+
+030000007e0500000920000000006800,Nintendo Switch Pro Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Windows,
+axes:6,balls:0,buttons:15,hats:0,
+
+## windows-bt-xinput
+
+030000005e040000e002000000007801,XInput Controller #1,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b8,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Windows,
+axes:6,balls:0,buttons:11,hats:1,
+
+## windows-bt-xinput-disabled
+
+Not responding.
+
+## windows-usb-dinput
+
+03000000c82d00000160000000000000,8Bitdo SN30 Pro,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Windows,
+axes:4,balls:0,buttons:15,hats:1,
+
+## windows-usb-macos
+
+030000004c050000c405000000016800,PS4 Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Windows,
+axes:6,balls:0,buttons:16,hats:0,
+
+## windows-usb-switch
+
+Mot responding.
+
+## windows-usb-xinput
+
+030000005e0400008e02000000007801,XInput Controller #1,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b8,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Windows,
+axes:6,balls:0,buttons:11,hats:1,
+
+## windows-usb-xinput-disabled
+
+FIXME: XEOX Gamepad is wrong here, Windows must have gotten confused.
+
+030000005e0400008e02000000000000,Controller (XEOX Gamepad),a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b4,leftstick:b8,lefttrigger:+a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:-a2,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Windows,
+axes:5,balls:0,buttons:10,hats:1,
+
+## HID
+
+### Bluetooth report
+
+Rest state report:
+
+ (03) 0f 80 80 80 80 00 00 00 00
+
+0H           hat switch
+AA AA AA AA  axes
+XX XX        not used -- however, the device sends trigger data here
+BB BB        16 buttons
+
+The device actually sends 0xff for the trigger axes, but since usage is not
+set, the axis data is ignored. The device also sends button events for the
+triggers.
+
+Linux SDL reports:   axes:4,balls:0,buttons:16,hats:1,
+macOS SDL reports:   axes:4,balls:0,buttons:16,hats:1
+Windows SDL reports: axes:4,balls:0,buttons:16,hats:1
+
+05000000c82d00000161000000010000,...,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Linux,
+03000000c82d00000161000000010000,...,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Mac OS X,
+03000000c82d00000161000000000000,...,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Windows,
+
+### Bluetooth report descriptor
+
+cat << EOF | xxd -r -p | hidrd-convert -o spec
+ 05 01 09 05 A1 01 85 03 05 01 15 00 25 07 46 3B
+ 01 95 01 75 04 65 14 09 39 81 42 75 01 95 04 81
+ 01 15 00 26 FF 00 09 30 09 31 09 32 09 35 95 04
+ 75 08 81 02 65 00 75 08 95 02 81 01 05 09 19 01
+ 29 10 15 00 25 01 75 01 95 10 81 02 C0
+EOF
+
+Usage Page (Desktop),               ; Generic desktop controls (01h)
+Usage (Gamepad),                    ; Gamepad (05h, application collection)
+Collection (Application),
+    Report ID (3),
+    Usage Page (Desktop),           ; Generic desktop controls (01h)
+    Logical Minimum (0),
+    Logical Maximum (7),
+    Physical Maximum (315),
+    Report Count (1),
+    Report Size (4),
+    Unit (Degrees),
+    Usage (Hat Switch),             ; Hat switch (39h, dynamic value)
+    Input (Variable, Null State),
+    Report Size (1),
+    Report Count (4),
+    Input (Constant),
+    Logical Minimum (0),
+    Logical Maximum (255),
+    Usage (X),                      ; X (30h, dynamic value)
+    Usage (Y),                      ; Y (31h, dynamic value)
+    Usage (Z),                      ; Z (32h, dynamic value)
+    Usage (Rz),                     ; Rz (35h, dynamic value)
+    Report Count (4),
+    Report Size (8),
+    Input (Variable),
+    Unit,
+    Report Size (8),
+    Report Count (2),
+    Input (Constant),
+    Usage Page (Button),            ; Button (09h)
+    Usage Minimum (01h),
+    Usage Maximum (10h),
+    Logical Minimum (0),
+    Logical Maximum (1),
+    Report Size (1),
+    Report Count (16),
+    Input (Variable),
+End Collection
+
+
+### USB report
+
+Rest state:
+
+ 00 00 0f 80 80 80 80 00 00
+
+BB BB        15 buttons - 15 bits + 1 bit padding
+0H           hat switch
+AA AA AA AA  aa
+CC CC        constant
+
+Linux:   axes:4,balls:0,buttons:15,hats:1,
+macOS:   axes:4,balls:0,buttons:15,hats:1,
+Windows: axes:4,balls:0,buttons:15,hats:1,
+
+03000000c82d00000160000011010000,-,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Linux,
+03000000c82d00000160000001000000,-,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Mac OS X,
+03000000c82d00000160000000000000,-,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b2,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Windows,
+
+### USB report descriptor
+
+usbhid-dump -m 2dc8:6001 -i0 | grep -v :
+
+ 05 01 09 05 A1 01 15 00 25 01 35 00 45 01 75 01
+ 95 0F 05 09 19 01 29 0F 81 02 95 01 81 01 05 01
+ 25 07 46 3B 01 75 04 95 01 65 14 09 39 81 42 65
+ 00 95 01 81 01 26 FF 00 46 FF 00 09 30 09 31 09
+ 32 09 35 75 08 95 04 81 02 65 00 75 08 95 02 81
+ 01 05 08 09 43 15 00 26 FF 00 35 00 46 FF 00 75
+ 08 95 02 91 82 09 44 91 82 09 45 91 82 09 46 91
+ 82 C0
+
+usbhid-dump -m 2dc8:6001 -i0 | grep -v : | xxd -r -p | hidrd-convert -o spec
+
+Usage Page (Desktop),               ; Generic desktop controls (01h)
+Usage (Gamepad),                    ; Gamepad (05h, application collection)
+Collection (Application),
+    Logical Minimum (0),
+    Logical Maximum (1),
+    Physical Minimum (0),
+    Physical Maximum (1),
+    Report Size (1),
+    Report Count (15),
+    Usage Page (Button),            ; Button (09h)
+    Usage Minimum (01h),
+    Usage Maximum (0Fh),
+    Input (Variable),
+    Report Count (1),
+    Input (Constant),
+    Usage Page (Desktop),           ; Generic desktop controls (01h)
+    Logical Maximum (7),
+    Physical Maximum (315),
+    Report Size (4),
+    Report Count (1),
+    Unit (Degrees),
+    Usage (Hat Switch),             ; Hat switch (39h, dynamic value)
+    Input (Variable, Null State),
+    Unit,
+    Report Count (1),
+    Input (Constant),
+    Logical Maximum (255),
+    Physical Maximum (255),
+    Usage (X),                      ; X (30h, dynamic value)
+    Usage (Y),                      ; Y (31h, dynamic value)
+    Usage (Z),                      ; Z (32h, dynamic value)
+    Usage (Rz),                     ; Rz (35h, dynamic value)
+    Report Size (8),
+    Report Count (4),
+    Input (Variable),
+    Unit,
+    Report Size (8),
+    Report Count (2),
+    Input (Constant),
+    Usage Page (LED),               ; LEDs (08h)
+    Usage (43h),
+    Logical Minimum (0),
+    Logical Maximum (255),
+    Physical Minimum (0),
+    Physical Maximum (255),
+    Report Size (8),
+    Report Count (2),
+    Output (Variable, Volatile),
+    Usage (44h),
+    Output (Variable, Volatile),
+    Usage (45h),
+    Output (Variable, Volatile),
+    Usage (46h),
+    Output (Variable, Volatile),
+End Collection
