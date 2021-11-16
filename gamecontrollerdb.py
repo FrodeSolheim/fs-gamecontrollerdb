@@ -5,7 +5,8 @@ import os
 
 def main():
     mappings = {}
-    for fileName in reversed(os.listdir("Data/GameControllerDB")):
+    for fileName in sorted(os.listdir("Data/GameControllerDB"), reverse=True):
+        print(fileName)
         with open(os.path.join("Data/GameControllerDB", fileName), "r") as f:
             for line in f:
                 line = line.strip()
@@ -15,7 +16,8 @@ def main():
                     guid = line[:32]
                     if guid not in mappings:
                         mappings[guid] = line
-    with open("gamecontrollerdb.txt", "w") as f:
+                        # print(guid)
+    with open("gamecontrollerdb.txt", "w", newline="\n") as f:
         for guid in sorted(mappings.keys()):
             f.write(mappings[guid])
             f.write("\n")

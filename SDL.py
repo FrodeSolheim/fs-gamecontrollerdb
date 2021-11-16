@@ -3,11 +3,12 @@ from typing import Dict
 
 
 class Mapping:
-    guid: str = ""
-    name: str = ""
-    mapping: Dict[str, str] = {}
-    hint: str = ""
-    platform: str = ""
+    def __init__(self):
+        self.guid: str = ""
+        self.name: str = ""
+        self.mapping: Dict[str, str] = {}
+        self.hint: str = ""
+        self.platform: str = ""
 
 
 mappingKeys = set(
@@ -73,6 +74,7 @@ def parseMapping(line: str, platform: str) -> Mapping:
         else:
             raise Exception(f"Unexpected part {part!r}")
     mapping.platform = platform
+    # print(mapping.guid, mapping.mapping)
     return mapping
 
 

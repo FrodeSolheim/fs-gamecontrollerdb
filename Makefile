@@ -27,5 +27,6 @@ Data/GameControllerDB/75-OpenRetro.txt: \
 gamecontrollerdb.txt: \
 		Data/GameControllerDB/25-SDL_GameControllerDB.txt \
 		Data/GameControllerDB/50-SDL2.txt \
-		Data/GameControllerDB/75-OpenRetro.txt
+		Data/GameControllerDB/75-OpenRetro.txt \
+		gamecontrollerdb.py
 	python3 gamecontrollerdb.py
