@@ -14,12 +14,17 @@ def main():
                     continue
                 if len(line) > 32 and line[32] == ",":
                     guid = line[:32]
+                    if line.endswith(","):
+                        line = line[:-1]
+                    platform = line.split(",")[-1]
+                    assert platform.startswith("platform:")
+                    platform = platform[len("platform:"):]
                     if guid not in mappings:
-                        mappings[guid] = line
+                        mappings[(platform.lower(), guid)] = line
                         # print(guid)
     with open("gamecontrollerdb.txt", "w", newline="\n") as f:
-        for guid in sorted(mappings.keys()):
-            f.write(mappings[guid])
+        for platformLower, guid in sorted(mappings.keys()):
+            f.write(mappings[(platformLower, guid)])
             f.write("\n")
 
 

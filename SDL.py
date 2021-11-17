@@ -119,11 +119,11 @@ def main() -> None:
             if mapping.guid == "xinput":
                 # Ignore this one, for now at least
                 continue
-            mappings[mapping.guid] = mapping
+            mappings[(platform.lower(), mapping.guid)] = mapping
 
     with open(sys.argv[1], "w") as f:
-        for guid in sorted(mappings.keys()):
-            f.write(formatMapping(mappings[guid]))
+        for platformLower, guid in sorted(mappings.keys()):
+            f.write(formatMapping(mappings[(platformLower, guid)]))
             f.write("\n")
         count = len(mappings.keys())
         print(f"Wrote {count} mappings")
