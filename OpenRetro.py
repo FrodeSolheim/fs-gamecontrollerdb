@@ -2,7 +2,8 @@
 import os
 import sys
 import traceback
-from typing import Dict, List, Optional, Tuple, TypedDict
+from typing import Dict, List, Optional, Tuple
+from typing_extensions import TypedDict
 
 # Read "common" controllers (often simulated by other controllers) first,
 # then we can check that other controllers are compatible (using a subset)
