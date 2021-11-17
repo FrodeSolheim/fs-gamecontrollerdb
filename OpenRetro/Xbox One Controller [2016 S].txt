@@ -25,7 +25,7 @@
 # Bluetooth (?) - Both are responsive using the same controller. It seems one
 # of the devices is the HIDAPI version.
 
-# macOS, BT, SDL 2.0.14, HIDAPI
+# macos-bt-hidapi
 030000005e040000fd02000003096800,Xbox One Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Mac OS X,
 #^030000005e040000fd02000003096800,Xbox One S Controller,axes:6,balls:0,buttons:15,hats:0,
 
