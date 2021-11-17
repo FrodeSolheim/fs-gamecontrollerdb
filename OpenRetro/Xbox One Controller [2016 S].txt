@@ -19,8 +19,27 @@
 030000005e040000ff02000000007200,Xbox One Controller,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b8,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b9,righttrigger:a5,rightx:a2,righty:a3,start:b7,x:b2,y:b3,platform:Windows,
 #^030000005e040000ff02000000007200,Controller (Xbox One For Windows),axes:6,balls:0,buttons:16,hats:1,
 
-# macos-bt
-030000005e040000fd02000003096800,Unknown Xbox Wireless Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Mac OS X,
+# -----
+
+# On macOS 12, this controller appears as two devices when connected via
+# Bluetooth (?) - Both are responsive using the same controller. It seems one
+# of the devices is the HIDAPI version.
+
+# macOS, BT, SDL 2.0.14, HIDAPI
+030000005e040000fd02000003096800,Xbox One Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Mac OS X,
+#^030000005e040000fd02000003096800,Xbox One S Controller,axes:6,balls:0,buttons:15,hats:0,
+
+# The following device should probably not be visible. SDL should have disabled
+# it. Blacklist? Actually, with SDL 2.0.16, the following device is the single
+# visible one.
+# Note, the select button isn't response when mapping with the Launcher, but
+# works when using fs-uae-device-hepler directly. FIXME: Investigate
+
+# macOS, BT, SDL 2.0.16
+050000005e040000e0020000ff070000,Xbox One Controller,a:b0,b:b1,back:b8,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b9,leftshoulder:b4,leftstick:b6,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b7,righttrigger:a5,rightx:a3,righty:a4,start:b10,x:b2,y:b3,platform:Mac OS X,
+#^050000005e040000e0020000ff070000,Xbox Wireless Controller,axes:6,balls:0,buttons:11,hats:1,
+
+# -----
 
 # macos-usb (not detected)
 
