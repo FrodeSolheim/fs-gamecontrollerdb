@@ -11,7 +11,7 @@ class Mapping:
         self.platform: str = ""
 
 
-mappingKeys = set(
+knownMappingKeys = set(
     [
         "a",
         "b",
@@ -69,7 +69,7 @@ def parseMapping(line: str, platform: str) -> Mapping:
         key, value = part.split(":", 1)
         if key == "hint":
             mapping.hint = value
-        elif key in mappingKeys:
+        elif key in knownMappingKeys:
             mapping.mapping[key] = value
         else:
             raise Exception(f"Unexpected part {part!r}")
@@ -101,7 +101,7 @@ def main() -> None:
                 if "SDL_JOYSTICK_DINPUT" in line:
                     platform = "Windows"
                 elif "__MACOSX__" in line:
-                    platform = "MacOSX"
+                    platform = "Mac OS X"
                 elif "__LINUX__" in line:
                     platform = "Linux"
                 else:
@@ -119,11 +119,11 @@ def main() -> None:
             if mapping.guid == "xinput":
                 # Ignore this one, for now at least
                 continue
-            mappings[(platform.lower(), mapping.guid)] = mapping
+            mappings[(mapping.guid, platform.lower())] = mapping
 
     with open(sys.argv[1], "w") as f:
-        for platformLower, guid in sorted(mappings.keys()):
-            f.write(formatMapping(mappings[(platformLower, guid)]))
+        for key in sorted(mappings.keys()):
+            f.write(formatMapping(mappings[key]))
             f.write("\n")
         count = len(mappings.keys())
         print(f"Wrote {count} mappings")

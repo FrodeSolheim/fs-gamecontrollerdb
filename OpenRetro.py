@@ -2,6 +2,7 @@
 import os
 import sys
 import traceback
+from typing import Dict, List, Optional, Tuple, TypedDict
 
 # Read "common" controllers (often simulated by other controllers) first,
 # then we can check that other controllers are compatible (using a subset)
@@ -14,13 +15,27 @@ priority_list = [
     "Switch Pro Controller.txt",
     "Xbox 360 Controller.txt",
     "Xbox 360 Controller [Wireless Receiver].txt",
+    "Xbox Controller.txt [Series X].txt",
     "Xbox One Controller.txt",
     "Xbox One Controller [2013].txt",
     "Xbox One Controller [2016 S].txt",
 ]
 
 
-def add_from_line(mappings, errors, file_name, line, mapping=None):
+class Mapping(TypedDict):
+    guid: str
+    name: str
+    platform: str
+    mapping: Dict[str, str]
+
+
+def addFromLine(
+    mappings: Dict[Tuple[str, str], Mapping],
+    errors: List[str],
+    fileName: str,
+    line: str,
+    mapping: Optional[Dict[str, str]] = None,
+):
     if line.startswith("axes:"):
         return
     if line.endswith(","):
@@ -29,8 +44,8 @@ def add_from_line(mappings, errors, file_name, line, mapping=None):
     guid = parts.pop(0)
     name = parts.pop(0)
     platform = parts.pop()
-    mapping_id = guid + platform
-    new = {
+    mappingKey = (guid, platform)
+    new: Mapping = {
         "guid": guid,
         "name": name,
         "platform": platform,
@@ -42,8 +57,8 @@ def add_from_line(mappings, errors, file_name, line, mapping=None):
         if mapping is not None:
             mapping[key] = value
 
-    if mapping_id in mappings:
-        old = mappings[mapping_id]
+    if mappingKey in mappings:
+        old = mappings[mappingKey]
         # Some Xbox-compatible controllers have only dpad but report this as
         # axes. Allow this exception and handle as compatible mapping.
         dpad_using_axes = False
@@ -108,33 +123,38 @@ def add_from_line(mappings, errors, file_name, line, mapping=None):
             print(" - '{}' uses axes for d-pad (allowed)".format(new["name"]))
         return
 
-    if os.path.basename(file_name) == "gamecontrollerdb.txt":
+    if os.path.basename(fileName) == "gamecontrollerdb.txt":
         # Keep using name from mapping entry
         pass
     else:
         # Override controller name from file name
-        name = os.path.splitext(os.path.basename(file_name))[0]
+        name = os.path.splitext(os.path.basename(fileName))[0]
         name = name.split("[")[0].strip()
         new["name"] = name
-    mappings[mapping_id] = new
+    mappings[mappingKey] = new
 
     # Sanity checking, for example: make sure leftstick is mapped to a
     # button press and not an axis.
-    if os.path.basename(file_name) == "gamecontrollerdb.txt":
+    if os.path.basename(fileName) == "gamecontrollerdb.txt":
         return
     for key in ["leftstick", "rightstick"]:
-        value = new["mapping"].get(key)
+        value = new["mapping"].get(key, "")
         if value and not value.startswith("b"):
             errors.append(
                 "{} is not mapped from button ({})".format(key, value)
             )
 
 
-def add_from_file(mappings, errors, file_name, single_controller=False):
-    print(file_name)
-    markdown = file_name.endswith(".md")
-    mode_map = {}
-    with open(file_name, "r") as f:
+def addFromFile(
+    mappings: Dict[Tuple[str, str], Mapping],
+    errors: List[str],
+    fileName: str,
+    singleController: bool = False,
+):
+    print(fileName)
+    markdown = fileName.endswith(".md")
+    modeMap: Dict[str, List[Dict[str, str]]] = {}
+    with open(fileName, "r") as f:
         mode = ""
         for line in f:
             line = line.strip()
@@ -169,34 +189,34 @@ def add_from_file(mappings, errors, file_name, single_controller=False):
             # if line.startswith("("):
             #     continue
 
-            mapping = {}
+            mapping: Dict[str, str] = {}
             try:
-                add_from_line(mappings, errors, file_name, line, mapping)
+                addFromLine(mappings, errors, fileName, line, mapping)
             except:
                 traceback.print_exc()
-                errors.append("ERROR in {}: {}".format(file_name, line))
+                errors.append("ERROR in {}: {}".format(fileName, line))
             else:
-                if single_controller:
+                if singleController:
                     # print(mode, mapping)
-                    mode_map.setdefault(mode, []).append(mapping)
+                    modeMap.setdefault(mode, []).append(mapping)
                     # print("mode:", mode)
-    if single_controller:
-        all_ok = True
+    if singleController:
+        allOk = True
         exceptions = False
-        for mode in mode_map.keys():
-            m1 = mode_map[mode].pop(0)
+        for mode in modeMap.keys():
+            m1 = modeMap[mode].pop(0)
             # print(mapping)
-            for m2 in mode_map[mode]:
+            for m2 in modeMap[mode]:
                 # if mode == "xinput" and m1[]
-                m1_mod, exceptions_1 = fix_mapping(m1, mode)
-                m2_mod, exceptions_2 = fix_mapping(m2, mode)
+                m1_mod, exceptions_1 = fixMapping(m1, mode)
+                m2_mod, exceptions_2 = fixMapping(m2, mode)
                 if exceptions_1 or exceptions_2:
                     exceptions = True
                 if m1_mod != m2_mod:
                     print("")
                     print(
                         "Mismatch in",
-                        file_name,
+                        fileName,
                         "mode =",
                         mode if mode else "(default)",
                     )
@@ -205,14 +225,14 @@ def add_from_file(mappings, errors, file_name, single_controller=False):
                     print("\ndoes not equal\n")
                     print(m2)
                     print("")
-                    all_ok = False
-        if all_ok:
+                    allOk = False
+        if allOk:
             if exceptions:
                 print(" - XInput exceptions allowed")
             print(" - all mappings with same mode match")
 
 
-def fix_mapping(m, mode):
+def fixMapping(m, mode):
     m2 = m.copy()
     exceptions = False
     if (
@@ -228,121 +248,7 @@ def fix_mapping(m, mode):
     return m2, exceptions
 
 
-def main():
-    file_names = []
-    for file_name in os.listdir("OpenRetro"):
-        if file_name in [".gitignore"]:
-            continue
-        elif file_name.endswith(".swp"):
-            continue
-        elif file_name.endswith(".txt") or file_name.endswith(".md"):
-            file_names.append(
-                (
-                    0 if file_name in priority_list else 1,
-                    os.path.join("OpenRetro", file_name),
-                )
-            )
-        else:
-            print("")
-            print("ERROR: Unrecognized file", file_name)
-            print("")
-            sys.exit(1)
-    file_names.sort()
-    mappings = {}
-    errors = []
-    for file_name in file_names:
-        add_from_file(mappings, errors, file_name[1], single_controller=True)
-    if errors:
-        print("")
-        print("There were errors:")
-        for error in errors:
-            print(error)
-        print("")
-        sys.exit(1)
-
-    with open("gamecontrollerdb_split.txt", "w", newline="\n") as f:
-        for mapping_id in sorted(mappings.keys()):
-            info = mappings[mapping_id]
-            f.write("{},\n".format(info["guid"]))
-            f.write("{},\n".format(info["name"]))
-            for key in sorted(info["mapping"].keys()):
-                value = info["mapping"][key]
-                f.write("{}:{},\n".format(key, value))
-            f.write("{},\n".format(info["platform"]))
-
-    with open(sys.argv[1], "w") as f:
-        for mapping_id in sorted(mappings.keys()):
-            info = mappings[mapping_id]
-            f.write("{},".format(info["guid"]))
-            f.write("{},".format(info["name"]))
-            for key in sorted(info["mapping"].keys()):
-                value = info["mapping"][key]
-                f.write("{}:{},".format(key, value))
-            f.write("{},\n".format(info["platform"]))
-
-    add_from_file(mappings, errors, "SDL_GameControllerDB/gamecontrollerdb.txt")
-    if errors:
-        print("")
-        print("There were warnings:")
-        ignore_count = 0
-        for error in errors:
-            if error in ignored_warnings:
-                ignore_count += 1
-            else:
-                print(error)
-        if ignore_count > 0:
-            print("... ignored {} warning(s)".format(ignore_count))
-        print("")
-
-    with open("fsemu-sdlgamecontrollerdb.c", "w", newline="\n") as f:
-        f.write("#define FSEMU_INTERNAL\n")
-        f.write('#include "fsemu-sdlgamecontrollerdb.h"\n')
-        f.write("\n")
-        f.write("#include <stddef.h>\n")
-        f.write("\n")
-        f.write(
-            "// Mappings are sourced from - and prioritized - in this order:\n"
-        )
-        f.write("// 1. Verified configurations by FSEMU contributors\n")
-        f.write("// 2. The SDL project itself\n")
-        f.write("// 3. https://github.com/gabomdq/SDL_GameControllerDB\n")
-        f.write("//\n")
-        f.write(
-            "// The list is auto-generated and sorted by platform and GUID.\n"
-        )
-        f.write(
-            "// The following license applies specifically to this file:\n"
-        )
-        f.write("//\n")
-        for line in sdl_license.split("\n"):
-            f.write("// {}".format(line).strip() + "\n")
-        f.write("\n")
-        f.write("// clang-format off\n")
-        f.write("const char *fsemu_sdlgamecontrollerdb_mappings[] = {\n")
-        for platform in ["Linux", "Mac OS X", "Windows"]:
-            platform_define = "FSEMU_OS_" + platform.upper()
-            if platform_define == "FSEMU_OS_MAC OS X":
-                platform_define = "FSEMU_OS_MACOS"
-            f.write("#ifdef {}\n".format(platform_define))
-            for mapping_id in sorted(mappings.keys()):
-                info = mappings[mapping_id]
-                if info["platform"] != "platform:{}".format(platform):
-                    continue
-                f.write('"')
-                f.write("{},".format(info["guid"]))
-                # f.write("{},".format(info["name"]))
-                f.write('"\n"{},"\n"'.format(info["name"]))
-                for key in sorted(info["mapping"].keys()):
-                    value = info["mapping"][key]
-                    f.write("{}:{},".format(key, value))
-                f.write('",\n')
-            f.write("#endif\n")
-        f.write("NULL\n")
-        f.write("};\n")
-        f.write("// clang-format on\n")
-
-
-sdl_license = """\
+sdlLicense = """\
 Simple DirectMedia Layer
 Copyright (C) 1997-2020 Sam Lantinga <slouken@libsdl.org>
 
@@ -362,7 +268,7 @@ freely, subject to the following restrictions:
    misrepresented as being the original software.
 3. This notice may not be removed or altered from any source distribution."""
 
-ignored_warnings = [
+ignoredWarnings = [
     # Missing guide button locally.
     "Incompatible config: 05000000050b00000045000040000000,ASUS Gamepad,a:b0,b:b1,back:b9,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b6,leftshoulder:b4,leftstick:b7,lefttrigger:a5,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b8,righttrigger:a4,rightx:a2,righty:a3,start:b10,x:b2,y:b3,platform:Linux -- guide:b6 vs existing guide:[N/A]",
     # Using "SEGA" mapping locally.
@@ -392,6 +298,124 @@ ignored_warnings = [
     "Incompatible config: 03000000c82d00001590000011010000,8BitDo N30 Pro 2,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Linux -- dpleft:h0.8 vs existing dpleft:+a5",
     "Incompatible config: 05000000c82d00006528000000010000,8BitDo N30 Pro 2,a:b1,b:b0,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a2,righty:a3,start:b11,x:b4,y:b3,platform:Linux -- lefttrigger:b8 vs existing lefttrigger:a5",
 ]
+
+
+def main() -> None:
+    fileNames: List[Tuple[int, str]] = []
+    for fileName in os.listdir("OpenRetro"):
+        if fileName in [".gitignore"]:
+            continue
+        elif fileName.endswith(".swp"):
+            continue
+        elif fileName.endswith(".txt") or fileName.endswith(".md"):
+            fileNames.append(
+                (
+                    0 if fileName in priority_list else 1,
+                    os.path.join("OpenRetro", fileName),
+                )
+            )
+        else:
+            print("")
+            print("ERROR: Unrecognized file", fileName)
+            print("")
+            sys.exit(1)
+    fileNames.sort()
+
+    mappings: Dict[Tuple[str, str], Mapping] = {}
+    errors: List[str] = []
+
+    for fileName2 in fileNames:
+        addFromFile(mappings, errors, fileName2[1], singleController=True)
+
+    if errors:
+        print("")
+        print("There were errors:")
+        for error in errors:
+            print(error)
+        print("")
+        sys.exit(1)
+
+    # with open("gamecontrollerdb_split.txt", "w", newline="\n") as f:
+    #     for mapping_id in sorted(mappings.keys()):
+    #         info = mappings[mapping_id]
+    #         f.write("{},\n".format(info["guid"]))
+    #         f.write("{},\n".format(info["name"]))
+    #         for key in sorted(info["mapping"].keys()):
+    #             value = info["mapping"][key]
+    #             f.write("{}:{},\n".format(key, value))
+    #         f.write("{},\n".format(info["platform"]))
+
+    with open(sys.argv[1], "w") as f:
+        for mapping_id in sorted(mappings.keys()):
+            info = mappings[mapping_id]
+            f.write("{},".format(info["guid"]))
+            f.write("{},".format(info["name"]))
+            for key in sorted(info["mapping"].keys()):
+                value = info["mapping"][key]
+                f.write("{}:{},".format(key, value))
+            f.write("{},\n".format(info["platform"]))
+
+    addFromFile(mappings, errors, "SDL_GameControllerDB/gamecontrollerdb.txt")
+    if errors:
+        print("")
+        print("There were warnings:")
+        ignore_count = 0
+        for error in errors:
+            if error in ignoredWarnings:
+                ignore_count += 1
+            else:
+                print(error)
+        if ignore_count > 0:
+            print("... ignored {} warning(s)".format(ignore_count))
+        print("")
+
+    with open("fsemu-sdlgamecontrollerdb.c", "w", newline="\n") as f:
+        f.write("#define FSEMU_INTERNAL\n")
+        f.write('#include "fsemu-sdlgamecontrollerdb.h"\n')
+        f.write("\n")
+        f.write("#include <stddef.h>\n")
+        f.write("\n")
+        f.write(
+            "// Mappings are sourced from - and prioritized - in this order:\n"
+        )
+        f.write("// 1. Verified configurations by FSEMU contributors\n")
+        f.write("// 2. The SDL project itself\n")
+        f.write("// 3. https://github.com/gabomdq/SDL_GameControllerDB\n")
+        f.write("//\n")
+        f.write(
+            "// The list is auto-generated and sorted by platform and GUID.\n"
+        )
+        f.write(
+            "// The following license applies specifically to this file:\n"
+        )
+        f.write("//\n")
+        for line in sdlLicense.split("\n"):
+            f.write("// {}".format(line).strip() + "\n")
+        f.write("\n")
+        f.write("// clang-format off\n")
+        f.write("const char *fsemu_sdlgamecontrollerdb_mappings[] = {\n")
+        for platform in ["Linux", "Mac OS X", "Windows"]:
+            platform_define = "FSEMU_OS_" + platform.upper()
+            if platform_define == "FSEMU_OS_MAC OS X":
+                platform_define = "FSEMU_OS_MACOS"
+            f.write("#ifdef {}\n".format(platform_define))
+            for mapping_id in sorted(mappings.keys()):
+                info = mappings[mapping_id]
+                if info["platform"] != "platform:{}".format(platform):
+                    continue
+                f.write('"')
+                f.write("{},".format(info["guid"]))
+                # f.write("{},".format(info["name"]))
+                f.write('"\n"{},"\n"'.format(info["name"]))
+                for key in sorted(info["mapping"].keys()):
+                    value = info["mapping"][key]
+                    f.write("{}:{},".format(key, value))
+                f.write('",\n')
+            f.write("#endif\n")
+        f.write("NULL\n")
+        f.write("};\n")
+        f.write("// clang-format on\n")
+
 
 if __name__ == "__main__":
     main()

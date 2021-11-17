@@ -3,7 +3,7 @@
 import os
 
 
-def main():
+def main() -> None:
     mappings = {}
     for fileName in sorted(os.listdir("Data/GameControllerDB"), reverse=True):
         print(fileName)
@@ -18,13 +18,12 @@ def main():
                         line = line[:-1]
                     platform = line.split(",")[-1]
                     assert platform.startswith("platform:")
-                    platform = platform[len("platform:"):]
+                    platform = platform[len("platform:") :]
                     if guid not in mappings:
-                        mappings[(platform.lower(), guid)] = line
-                        # print(guid)
+                        mappings[(guid, platform.lower())] = line
     with open("gamecontrollerdb.txt", "w", newline="\n") as f:
-        for platformLower, guid in sorted(mappings.keys()):
-            f.write(mappings[(platformLower, guid)])
+        for key in sorted(mappings.keys()):
+            f.write(mappings[key])
             f.write("\n")
 
 
