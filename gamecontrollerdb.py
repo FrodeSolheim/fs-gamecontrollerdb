@@ -19,7 +19,7 @@ def main() -> None:
                     platform = line.split(",")[-1]
                     assert platform.startswith("platform:")
                     platform = platform[len("platform:") :]
-                    if guid not in mappings:
+                    if (guid, platform.lower()) not in mappings:
                         mappings[(guid, platform.lower())] = line
     with open("gamecontrollerdb.txt", "w", newline="\n") as f:
         for key in sorted(mappings.keys()):

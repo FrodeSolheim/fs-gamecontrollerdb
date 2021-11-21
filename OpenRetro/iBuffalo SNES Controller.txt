@@ -11,8 +11,8 @@ Model: BSGP810GY Made in Chine, Buffalo Inc.
 
 ## macos-usb
 
-03000000830500006020000000010000,USB%2C2-axis 8-button gamepad  ,a:b1,b:b0,back:b6,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b4,rightshoulder:b5,start:b7,x:b3,y:b2,platform:Mac OS X,
-axes:2,balls:0,buttons:8,hats:0,
+03000000830500006020000000010000,iBuffalo SNES Controller,a:b1,b:b0,back:b6,dpdown:+a1,dpleft:-a0,dpright:+a0,dpup:-a1,leftshoulder:b4,rightshoulder:b5,start:b7,x:b3,y:b2,platform:Mac OS X,
+#^03000000830500006020000000010000,USB%2C2-axis 8-button gamepad,axes:2,balls:0,buttons:8,hats:0,
 
 ## windows-usb
 
