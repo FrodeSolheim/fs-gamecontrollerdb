@@ -1,5 +1,21 @@
 # PS5 Controller
 
+# linux-bt
+050000004c050000e60c000000810000,PS5 Controller,a:b0,b:b1,back:b8,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b11,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b12,righttrigger:a5,rightx:a3,righty:a4,start:b9,x:b3,y:b2,platform:Linux,
+#^050000004c050000e60c000000810000,Wireless Controller,axes:6,balls:0,buttons:13,hats:1,
+
+# linux-bt-hidapi
+030000004c050000e60c000000006800,PS5 Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b6,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b5,x:b2,y:b3,platform:Linux,
+#^030000004c050000e60c000000006800,PS5 Controller,axes:6,balls:0,buttons:17,hats:0,
+
+# linux-usb
+030000004c050000e60c000011810000,PS5 Controller,a:b0,b:b1,back:b8,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b10,leftshoulder:b4,leftstick:b11,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b12,righttrigger:a5,rightx:a3,righty:a4,start:b9,x:b3,y:b2,platform:Linux,
+#^030000004c050000e60c000011810000,Sony Interactive Entertainment Wireless Controller,axes:6,balls:0,buttons:13,hats:1,
+
+# linux-usb-hidapi
+030000004c050000e60c000000016800,PS5 Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Linux,
+#^030000004c050000e60c000000016800,PS5 Controller,axes:6,balls:0,buttons:17,hats:0,
+
 # macos-bt-hidapi
 030000004c050000e60c000000016800,PS5 Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Mac OS X,
 #^030000004c050000e60c000000016800,PS5 Controller,axes:6,balls:0,buttons:17,hats:0,
