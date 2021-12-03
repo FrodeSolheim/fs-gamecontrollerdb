@@ -2,6 +2,10 @@
 050000007e0500000920000001000000,Pro Controller,a:b0,b:b1,back:b8,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b12,leftshoulder:b4,leftstick:b10,lefttrigger:b6,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b11,righttrigger:b7,rightx:a2,righty:a3,start:b9,x:b2,y:b3,platform:Linux,
 axes:4,balls:0,buttons:16,hats:1,
 
+# linux-usb-hidapi
+030000007e0500000920000010026800,Switch Pro Controller,a:b0,b:b1,back:b4,dpdown:b12,dpleft:b13,dpright:b14,dpup:b11,guide:b5,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,misc1:b15,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,start:b6,x:b2,y:b3,platform:Linux,
+#^030000007e0500000920000010026800,Nintendo Switch Pro Controller,axes:6,balls:0,buttons:16,hats:0,
+
 # linux-usb (not responding)
 # 030000007e0500000920000011010000,Nintendo Co.%2C Ltd. Pro Controller,platform:Linux,
 # axes:4,balls:0,buttons:18,hats:1,
