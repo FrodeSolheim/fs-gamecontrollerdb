@@ -13,6 +13,7 @@ priority_list = [
     "PS3 Controller.txt",
     "PS4 Controller.txt",
     "PS4 Controller [v2].txt",
+    "PS5 Controller.txt",
     "Switch Pro Controller.txt",
     "Xbox 360 Controller.txt",
     "Xbox 360 Controller [Wireless Receiver].txt",
@@ -334,7 +335,9 @@ def main() -> None:
         for error in errors:
             print(error)
         print("")
-        sys.exit(1)
+        if "--strict" in sys.argv:
+            sys.exit(1)
+    errors = []
 
     # with open("gamecontrollerdb_split.txt", "w", newline="\n") as f:
     #     for mapping_id in sorted(mappings.keys()):
