@@ -48,6 +48,7 @@ knownMappingKeys = set(
         "paddle2",
         "paddle3",
         "paddle4",
+        "touchpad",
     ]
 )
 
