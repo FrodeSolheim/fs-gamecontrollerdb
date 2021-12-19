@@ -1,5 +1,6 @@
 import sys
 from typing import Dict
+from fsgamesys.input.gamecontroller import GameControllerMapping
 
 
 class Mapping:
@@ -53,19 +54,23 @@ knownMappingKeys = set(
 )
 
 
-def parseMapping(line: str, platform: str) -> Mapping:
-    mapping = Mapping()
+def cleanLine(line: str) -> str:
     assert line.startswith('"')
-    line = line[1:]
+    line = line.strip('"')
     line = line.split("/*", 1)[0]
     line = line.split("//", 1)[0]
+    line = line.strip(' ,"')
+    return line
+
+
+def parseMapping(line: str, platform: str) -> Mapping:
+    mapping = Mapping()
+    line = cleanLine(line)
     parts = line.split(",")
     mapping.guid = parts.pop(0)
     mapping.name = parts.pop(0)
     for part in parts:
         part = part.strip(' "')
-        if not part:
-            continue
         # print(part)
         key, value = part.split(":", 1)
         if key == "hint":
@@ -115,10 +120,31 @@ def main() -> None:
                 continue
             if not platform:
                 continue
-            print(platform, line)
+            # print(platform, line)
             mapping = parseMapping(line, platform)
             if mapping.guid == "xinput":
                 # Ignore this one, for now at least
+                continue
+
+            try:
+                # lineToParse = line.strip(' ,"')
+                lineToParse = cleanLine(line)
+                lineToParse += f",platform:{platform}"
+                lineToParse = lineToParse.replace(
+                    "hint:SDL_GAMECONTROLLER_USE_BUTTON_LABELS:=1", ""
+                )
+                lineToParse = lineToParse.replace(
+                    "hint:!SDL_GAMECONTROLLER_USE_BUTTON_LABELS:=1", ""
+                )
+                mappingObj = GameControllerMapping.fromString(
+                    lineToParse, strict=True
+                )
+            except Exception as e:
+                print("\nFailed line:")
+                print(lineToParse)
+                print("Exception:")
+                print(repr(e))
+                print("")
                 continue
             mappings[(mapping.guid, platform.lower())] = mapping
 

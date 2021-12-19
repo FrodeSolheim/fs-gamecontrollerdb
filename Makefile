@@ -30,3 +30,8 @@ gamecontrollerdb.txt: \
 		Data/GameControllerDB/75-OpenRetro.txt \
 		gamecontrollerdb.py
 	python3 gamecontrollerdb.py
+
+update-fsgamesys:
+	mkdir -p fsgamesys/input
+	cp ../fs-uae-launcher/fsgamesys/input/inputdevice.py fsgamesys/input/
+	cp ../fs-uae-launcher/fsgamesys/input/gamecontroller.py fsgamesys/input/
